@@ -15,3 +15,11 @@ class TestJSONCleaner(unittest.TestCase):
 
     def test_json_clean_double_quotes(self):
         self.assertEqual(JSONCleaner.clean_double_quotes(self.json_raw_data), self.cleaned_json_data)
+
+
+class TestCleaners(unittest.TestCase):
+    """Tests Cleaners returned based on Data Type"""
+    def test_cleaner_returns_json_cleaner_for_json_file(self):
+        testing_file = "./tests/json_testing_sample.json"
+        file_type = get_data_type(testing_file)
+        self.assertEqual(cleaners[file_type], JSONCleaner.clean_double_quotes)
