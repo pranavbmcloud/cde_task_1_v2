@@ -18,14 +18,14 @@ from src.file_type import DataType
 class JSONCleaner:
     """Class with all json cleaning methods"""
     @classmethod
-    def clean_double_quotes(self, data):
+    def clean_single_quotes(self, data):
         """Cleans double quotes from raw json data
 
         the json loads method makes it easy to load json as dict from file
         The json needs to be dict as that enables the next flattening process
-        but json.loads() method requires single quotes rather than double quotes
+        but json.loads() method requires double quotes rather than single quotes
         """
         return [line.replace("'", '"') for line in data]
 
 
-cleaners = {DataType.JSON: JSONCleaner.clean_double_quotes}
+cleaners = {DataType.JSON: JSONCleaner.clean_single_quotes}
