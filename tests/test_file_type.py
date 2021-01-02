@@ -14,6 +14,7 @@ class TestDataType(unittest.TestCase):
         self.xml_local_file = "file 01.xml"
         self.text_input_url = "http://www.somedomain.com/path/input_file.txt"
         self.text_local_file = "file 01.txt"
+        self.unknown_file = "somefile.unknown"
 
     def test_json_input_file_should_return_json_datatype(self):
         file_type = get_data_type(self.json_local_file)
@@ -26,3 +27,6 @@ class TestDataType(unittest.TestCase):
     def test_text_input_file_should_return_text_datatype(self):
         file_type = get_data_type(self.text_input_url)
         self.assertEqual(file_type, DataType.TEXT)
+
+    def test_unknown_input_file_should_raise_ValueError(self):
+        self.assertRaises(ValueError, get_data_type, self.unknown_file)
