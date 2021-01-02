@@ -1,3 +1,19 @@
+# cde_task_1
+
+## Workflow:
+#### Ingests the source file
+#### Cleans the data
+#### Creates a local clean copy
+#### Processes from the clean copy
+#### Flattens (if required)
+#### Writes to final file
+
+  
+## Tests
+#### Project uses the Python unittest testing framework for the tests
+#### Tests can be run using "python -m unittest" in the root
+  
+  
 ## Thoughts
 
 ### Data could Originate from multiple sources:
