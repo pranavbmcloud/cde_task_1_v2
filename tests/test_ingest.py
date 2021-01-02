@@ -15,3 +15,7 @@ class TestLocalIngest(unittest.TestCase):
         testing_file = "./tests/ingest_testing_sample.txt"
         expected_data = ['this is\n', 'a simple\n', 'text file\n', 'for testing']
         self.assertEqual(local_ingest(testing_file), expected_data)
+
+    def test_local_ingest_of_non_existant_file_returns_None(self):
+        testing_file = "./tests/ingest_testing_sample.tx"
+        self.assertEqual(local_ingest(testing_file), None)
