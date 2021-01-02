@@ -10,6 +10,19 @@ This module shall handle ingesting of the data in raw format into a Python list
 """
 
 
+def check_file_exists(func):
+    def wrap(filename):
+        try:
+            f = open(filename)
+        except FileNotFoundError:
+            return None
+        else:
+            f.close()
+            return func(filename)
+    return wrap
+
+
+@check_file_exists
 def local_ingest(filepath):
     """Handles ingesting of data from local filesystem
 
