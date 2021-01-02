@@ -2,6 +2,7 @@
 
 
 import unittest
+from src.main import get_source_type, DataSource
 
 
 class TestMainSourceType(unittest.TestCase):
