@@ -3,6 +3,7 @@
 
 import unittest, json
 from src.process import json_process
+from src.file_type import get_data_type
 
 
 class TestJSONProcess(unittest.TestCase):
@@ -18,3 +19,11 @@ class TestJSONProcess(unittest.TestCase):
     def test_json_process_malformed_file(self):
         with self.assertRaises(json.decoder.JSONDecodeError):
             json_process('./tests/json_testing_sample.json')
+
+
+class TestProcessors(unittest.TestCase):
+    """Tests Processors returned based on Data Type"""
+    def test_processor_returns_json_processor_for_json(self):
+        testing_file = "./tests/json_testing_sample.json"
+        file_type = get_data_type(testing_file)
+        self.assertEqual(processors[file_type], json_process)
