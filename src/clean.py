@@ -12,6 +12,9 @@ Replace single quotes in json with double quotes
 """
 
 
+from src.file_type import DataType
+
+
 class JSONCleaner:
     """Class with all json cleaning methods"""
     @classmethod
@@ -23,3 +26,6 @@ class JSONCleaner:
         but json.loads() method requires single quotes rather than double quotes
         """
         return [line.replace("'", '"') for line in data]
+
+
+cleaners = {DataType.JSON: JSONCleaner.clean_double_quotes}
