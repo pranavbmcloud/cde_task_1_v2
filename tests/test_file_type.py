@@ -22,3 +22,7 @@ class TestDataType(unittest.TestCase):
     def test_xml_input_file_should_return_xml_datatype(self):
         file_type = get_data_type(self.xml_local_file)
         self.assertEqual(file_type, DataType.XML)
+
+    def test_text_input_file_should_return_text_datatype(self):
+        file_type = get_data_type(self.text_input_url)
+        self.assertEqual(file_type, DataType.TEXT)
