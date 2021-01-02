@@ -3,6 +3,7 @@
 
 import unittest
 from src.ingest import local_ingest
+from src.source_type import get_source_type, DataSource
 
 
 class TestLocalIngest(unittest.TestCase):
@@ -19,3 +20,11 @@ class TestLocalIngest(unittest.TestCase):
     def test_local_ingest_of_non_existant_file_returns_None(self):
         testing_file = "./tests/ingest_testing_sample.tx"
         self.assertEqual(local_ingest(testing_file), None)
+
+
+class TestIngesters(unittest.TestCase):
+    """Tests ingesters returned based on Data Source Type"""
+    def test_ingester_returns_local_ingester_for_local_file(self):
+        testing_file = "./tests/ingest_testing_sample.txt"
+        source_type = get_source_type(testing_file)
+        self.assertEqual(ingesters[source_type], local_ingest)
