@@ -1,7 +1,8 @@
 """Module tests functionalty in process.py"""
 
 
-import unittest, json
+import unittest
+from src.process import json_process
 
 
 class TestJSONProcess(unittest.TestCase):
