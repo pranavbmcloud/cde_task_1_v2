@@ -21,4 +21,6 @@ def local_ingest(filepath):
     list
         contents of file, with each line represented as one item in the list
     """
-
+    with open(filepath, 'r') as f:
+        data = f.readlines()
+    return data
