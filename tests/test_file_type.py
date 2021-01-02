@@ -2,10 +2,11 @@
 
 
 import unittest
+from src.file_type import get_data_type, DataType
 
 
-class TestMainSourceType(unittest.TestCase):
-    """Tests Source Type related functionality in the main.py module"""
+class TestMainDataType(unittest.TestCase):
+    """Tests Source Data Type related functionality in the main.py module"""
     def setUp(self) -> None:
         self.json_input_url = "http://www.somedomain.com/path/input_file.json"
         self.json_local_file = "file 01.json"
