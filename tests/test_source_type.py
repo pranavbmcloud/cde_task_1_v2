@@ -5,7 +5,7 @@ import unittest
 from src.source_type import get_source_type, DataSource
 
 
-class TestMainSourceType(unittest.TestCase):
+class TestSourceType(unittest.TestCase):
     """Tests Source Type related functionality in the main.py module"""
     def setUp(self) -> None:
         self.input_url = "http://www.somedomain.com/path/input_file.json"
