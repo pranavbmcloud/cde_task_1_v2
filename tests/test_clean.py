@@ -2,6 +2,7 @@
 
 
 import unittest
+from src.clean import JSONCleaner
 
 
 class TestJSONCleaner(unittest.TestCase):
