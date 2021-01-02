@@ -18,3 +18,7 @@ class TestDataType(unittest.TestCase):
     def test_json_input_file_should_return_json_datatype(self):
         file_type = get_data_type(self.json_local_file)
         self.assertEqual(file_type, DataType.JSON)
+
+    def test_xml_input_file_should_return_xml_datatype(self):
+        file_type = get_data_type(self.xml_local_file)
+        self.assertEqual(file_type, DataType.XML)
