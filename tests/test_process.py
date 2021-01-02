@@ -2,7 +2,7 @@
 
 
 import unittest, json
-from src.process import json_process
+from src.process import json_process, processors
 from src.file_type import get_data_type
 
 
