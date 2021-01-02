@@ -290,3 +290,4 @@ dmypy.json
 # Cython debug symbols
 cython_debug/
 
+/tests/output_sample_file.txt
