@@ -10,6 +10,9 @@ This module shall handle ingesting of the data in raw format into a Python list
 """
 
 
+from src.source_type import DataSource
+
+
 def check_file_exists(func):
     def wrap(filename):
         try:
@@ -37,3 +40,6 @@ def local_ingest(filepath):
     with open(filepath, 'r') as f:
         data = f.readlines()
     return data
+
+
+ingesters = {DataSource.LOCAL: local_ingest}

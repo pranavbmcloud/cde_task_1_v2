@@ -2,7 +2,7 @@
 
 
 import unittest
-from src.ingest import local_ingest
+from src.ingest import local_ingest, ingesters
 from src.source_type import get_source_type, DataSource
 
 
