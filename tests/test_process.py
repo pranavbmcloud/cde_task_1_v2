@@ -14,3 +14,7 @@ class TestJSONProcess(unittest.TestCase):
 
     def test_json_process_cleaned_file(self):
         self.assertEqual(json_process('./tests/json_process_testing.json'), self.expected_data)
+
+    def test_json_process_malformed_file(self):
+        with self.assertRaises(json.decoder.JSONDecodeError):
+            json_process('./tests/json_testing_sample.json')
