@@ -29,4 +29,5 @@ class TestDataType(unittest.TestCase):
         self.assertEqual(file_type, DataType.TEXT)
 
     def test_unknown_input_file_should_raise_ValueError(self):
-        self.assertRaises(ValueError, get_data_type, self.unknown_file)
+        with self.assertRaises(ValueError):
+            get_data_type(self.unknown_file)
