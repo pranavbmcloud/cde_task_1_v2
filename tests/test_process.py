@@ -1,7 +1,7 @@
 """Module tests functionalty in process.py"""
 
 
-import unittest
+import unittest, json
 from src.process import json_process
 
 
