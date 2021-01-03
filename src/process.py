@@ -19,7 +19,9 @@ def json_process(file):
 
 
 def text_process(file):
-    """placeholder for the actual function"""
+    with open(file, 'r') as f:
+        data = f.readlines()
+    return data
 
 
 processors = {DataType.JSON: json_process, DataType.TEXT: text_process}
