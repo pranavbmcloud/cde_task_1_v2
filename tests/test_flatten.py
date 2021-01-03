@@ -45,3 +45,8 @@ class TestFlatteners(unittest.TestCase):
         testing_file = "./tests/json_testing_sample.json"
         file_type = get_data_type(testing_file)
         self.assertEqual(flatteners[file_type], flatten_dict)
+
+    def test_flattener_returns_already_flat_flattener_for_text(self):
+        testing_file = "./tests/ingest_testing_sample.txt"
+        file_type = get_data_type(testing_file)
+        self.assertEqual(flatteners[file_type], already_flat)
