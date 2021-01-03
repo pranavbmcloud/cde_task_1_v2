@@ -2,7 +2,7 @@
 
 
 import unittest
-from src.clean import JSONCleaner, cleaners
+from src.clean import JSONCleaner, cleaners, TextCleaner
 from src.file_type import get_data_type
 
 
