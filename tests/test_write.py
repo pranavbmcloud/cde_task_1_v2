@@ -2,7 +2,7 @@
 
 
 import unittest, os
-from src.write import simple_writer, list_writer, writers
+from src.write import simple_writer, list_writer, writers, text_writer
 from src.file_type import get_data_type
 
 

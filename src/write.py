@@ -40,4 +40,13 @@ def list_writer(data, output_file):
         dict_writer(item, output_file)
 
 
-writers = {DataType.JSON: list_writer}
+def text_writer(data, output_file):
+    with open(output_file, 'w') as csvfile:
+        csvwriter = csv.writer(csvfile, delimiter='\t')
+        for line in data:
+            r_stripped = line.rstrip()
+            split_line = r_stripped.split(sep=",")
+            csvwriter.writerow(split_line)
+
+
+writers = {DataType.JSON: list_writer, DataType.TEXT: text_writer}
