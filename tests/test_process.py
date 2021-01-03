@@ -27,3 +27,8 @@ class TestProcessors(unittest.TestCase):
         testing_file = "./tests/json_testing_sample.json"
         file_type = get_data_type(testing_file)
         self.assertEqual(processors[file_type], json_process)
+
+    def test_processor_returns_text_processor_for_text(self):
+        testing_file = "./tests/ingest_testing_sample.txt"
+        file_type = get_data_type(testing_file)
+        self.assertEqual(processors[file_type], text_process)
