@@ -32,3 +32,11 @@ class TestProcessors(unittest.TestCase):
         testing_file = "./tests/ingest_testing_sample.txt"
         file_type = get_data_type(testing_file)
         self.assertEqual(processors[file_type], text_process)
+
+
+class TestTextProcess(unittest.TestCase):
+    """Tests Text processing functionality"""
+    def test_text_process_should_return_file_data(self):
+        testing_file = "./tests/ingest_testing_sample.txt"
+        expected_data = ['this is\n', 'a simple\n', 'text file\n', 'for testing']
+        self.assertEqual(text_process(testing_file), expected_data)
