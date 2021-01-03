@@ -3,6 +3,7 @@
 
 import unittest
 from src.flatten import flatten_dict
+from src.file_type import get_data_type
 
 
 class TestFlatten(unittest.TestCase):
@@ -36,3 +37,11 @@ class TestFlatten(unittest.TestCase):
 
     def test_flatten(self):
         self.assertEqual(flatten_dict(self.sample_dict), self.flattened_dict)
+
+
+class TestFlatteners(unittest.TestCase):
+    """Tests flatenner returned based on Data Type"""
+    def test_flattener_returns_dict_flattener_for_json(self):
+        testing_file = "./tests/json_testing_sample.json"
+        file_type = get_data_type(testing_file)
+        self.assertEqual(flatteners[file_type], flatten_dict)
