@@ -10,6 +10,7 @@ class TestSourceType(unittest.TestCase):
     def setUp(self) -> None:
         self.input_url = "http://www.somedomain.com/path/input_file.json"
         self.local_file = "file 01.json"
+        self.local_text_file = "file 02.txt"
 
     def test_url_input_should_return_url_datasource(self):
         source_type = get_source_type(self.input_url)
@@ -17,4 +18,8 @@ class TestSourceType(unittest.TestCase):
 
     def test_local_input_should_return_local_datasource(self):
         source_type = get_source_type(self.local_file)
+        self.assertEqual(source_type, DataSource.LOCAL)
+
+    def test_local_text_file_should_return_local_datasource(self):
+        source_type = get_source_type(self.local_text_file)
         self.assertEqual(source_type, DataSource.LOCAL)
