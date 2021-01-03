@@ -24,15 +24,15 @@ def simple_writer(data, output_file):
 
 def dict_writer(data, output_file):
     with open(output_file, 'a', newline='') as csvfile:
-        spamwriter = csv.writer(csvfile, delimiter='\t')
+        csvwriter = csv.writer(csvfile, delimiter='\t')
         keys = []
         values = []
         for item in data.keys():
             keys.append(item)
-        spamwriter.writerow(keys)
+        csvwriter.writerow(keys)
         for item in data.values():
             values.append(item)
-        spamwriter.writerow(values)
+        csvwriter.writerow(values)
 
 
 def list_writer(data, output_file):
