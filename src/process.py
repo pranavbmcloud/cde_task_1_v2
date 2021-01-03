@@ -18,4 +18,8 @@ def json_process(file):
     return [json.loads(line) for line in data]
 
 
-processors = {DataType.JSON: json_process}
+def text_process(file):
+    """placeholder for the actual function"""
+
+
+processors = {DataType.JSON: json_process, DataType.TEXT: text_process}
