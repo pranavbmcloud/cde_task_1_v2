@@ -37,7 +37,7 @@ def flatten_dict(dictionary):
 
 
 def already_flat(data):
-    """placeholder for function"""
+    return data
 
 
 flatteners = {DataType.JSON: flatten_dict, DataType.TEXT: already_flat}
