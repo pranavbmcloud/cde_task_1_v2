@@ -13,6 +13,7 @@ Local file system
 
 
 import csv
+from src.file_type import DataType
 
 
 def simple_writer(data, output_file):
@@ -37,3 +38,6 @@ def dict_writer(data, output_file):
 def list_writer(data, output_file):
     for item in data:
         dict_writer(item, output_file)
+
+
+writers = {DataType.JSON: list_writer}
