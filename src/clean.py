@@ -17,8 +17,8 @@ from src.file_type import DataType
 
 class JSONCleaner:
     """Class with all json cleaning methods"""
-    @classmethod
-    def clean_single_quotes(self, data):
+    @staticmethod
+    def clean_single_quotes(data):
         """Cleans double quotes from raw json data
 
         the json loads method makes it easy to load json as dict from file
