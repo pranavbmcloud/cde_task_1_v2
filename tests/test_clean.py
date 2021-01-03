@@ -24,3 +24,8 @@ class TestCleaners(unittest.TestCase):
         testing_file = "./tests/json_testing_sample.json"
         file_type = get_data_type(testing_file)
         self.assertEqual(cleaners[file_type], JSONCleaner.clean_single_quotes)
+
+    def test_cleaner_returns_text_cleaner_for_text_file(self):
+        testing_file = "./tests/ingest_testing_sample.txt"
+        file_type = get_data_type(testing_file)
+        self.assertEqual(cleaners[file_type], TextCleaner.text_clean)
