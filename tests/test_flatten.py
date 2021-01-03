@@ -33,5 +33,6 @@ class TestFlatten(unittest.TestCase):
             'key2_0_nested_key3': 'nested_value4',
             'key3': 'value1'
         }
+
     def test_flatten(self):
         self.assertEqual(flatten_dict(self.sample_dict), self.flattened_dict)
