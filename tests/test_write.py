@@ -2,7 +2,7 @@
 
 
 import unittest
-from src.write import simple_writer
+from src.write import simple_writer, list_writer
 
 
 class TestWriteSimple(unittest.TestCase):

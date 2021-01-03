@@ -12,7 +12,28 @@ Local file system
 """
 
 
+import csv
+
+
 def simple_writer(data, output_file):
     with open(output_file, 'w') as f:
         for line in data:
             f.writelines(line)
+
+
+def dict_writer(data, output_file):
+    with open(output_file, 'a', newline='') as csvfile:
+        spamwriter = csv.writer(csvfile, delimiter='\t')
+        keys = []
+        values = []
+        for item in data.keys():
+            keys.append(item)
+        spamwriter.writerow(keys)
+        for item in data.values():
+            values.append(item)
+        spamwriter.writerow(values)
+
+
+def list_writer(data, output_file):
+    for item in data:
+        dict_writer(item, output_file)
