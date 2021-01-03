@@ -2,7 +2,7 @@
 
 
 import unittest
-from src.flatten import flatten_dict, flatteners
+from src.flatten import flatten_dict, flatteners, already_flat
 from src.file_type import get_data_type
 
 
