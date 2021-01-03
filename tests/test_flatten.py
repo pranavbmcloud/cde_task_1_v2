@@ -2,6 +2,7 @@
 
 
 import unittest
+from src.flatten import flatten_dict
 
 
 class TestFlatten(unittest.TestCase):
