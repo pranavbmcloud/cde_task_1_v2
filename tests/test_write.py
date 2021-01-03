@@ -3,6 +3,7 @@
 
 import unittest, os
 from src.write import simple_writer, list_writer
+from src.file_type import get_data_type
 
 
 class TestWriteSimple(unittest.TestCase):
@@ -56,3 +57,12 @@ class TestWritelistOfDicts(unittest.TestCase):
     def tearDown(self) -> None:
         import os
         os.remove(self.output_file)
+
+
+class TestWriters(unittest.TestCase):
+    """Tests writers returned based on Data Type"""
+    def test_writers_returns_list_writer_for_json(self):
+        """List writer is required as this handles multiple blocks of json"""
+        testing_file = "./tests/json_testing_sample.json"
+        file_type = get_data_type(testing_file)
+        self.assertEqual(writers[file_type], list_writer)
