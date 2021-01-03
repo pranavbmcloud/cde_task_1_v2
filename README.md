@@ -9,9 +9,21 @@
 #### Writes to final file
 
   
+## Current usage
+#### Place the json or txt file to be processed in the ./src directory
+#### Execute the main.py file
+#### Output file will be in the ./src dir with the name "final - <original file name>"
+#### Intermediate cleaned file will be in the ./src dir with the name "cleaned - <original file name>"
+  
+  
 ## Tests
 #### Project uses the Python unittest testing framework for the tests
 #### Tests can be run using "python -m unittest" in the root
+  
+  
+## To Do
+#### Test cases for the text cleaning and dictionary flattening methods
+#### Get file to parse from command line
   
   
 ## Thoughts
