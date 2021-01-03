@@ -17,3 +17,33 @@ class TestWriteSimple(unittest.TestCase):
         with open(self.output_file_name, 'r') as f:
             data = f.readlines()
         self.assertEqual(data, self.expected_data)
+
+
+class TestWritelistOfDicts(unittest.TestCase):
+    """Tests write of list of dicts"""
+    def setUp(self) -> None:
+        self.list_of_dicts = [
+            {
+                'key1': 'value1', 'key2': 'value2'
+            },
+            {
+                'key3': 'value3', 'key4': 'value4'
+            },
+            {
+                'key5': 'value5', 'key6': 'value6'
+            }
+        ]
+        self.expected_data =[
+            'key1\tkey2\n',
+            'value1\tvalue2\n',
+            'key3\tkey4\n',
+            'value3\tvalue4\n',
+            'key5\tkey6\n',
+            'value5\tvalue6\n'
+        ]
+        output_file = "./tests/list_writer_output.txt"
+        list_writer(self.list_of_dicts, output_file)
+        with open(output_file, 'r') as f:
+            self.written_data = f.readlines()
+    def test_write_list_of_dicts(self):
+        self.assertEqual(self.written_data, self.expected_data)
