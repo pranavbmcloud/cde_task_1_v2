@@ -12,8 +12,8 @@
 ## Current usage
 #### Place the json or txt file to be processed in the ./src directory
 #### Execute the main.py file
-#### Output file will be in the ./src dir with the name "final - <original file name>"
-#### Intermediate cleaned file will be in the ./src dir with the name "cleaned - <original file name>"
+#### Output file will be in the ./src dir with the name "final - original file name"
+#### Intermediate cleaned file will be in the ./src dir with the name "cleaned - original file name"
   
   
 ## Tests
