@@ -1,7 +1,7 @@
 """Module tests functionalty in write.py"""
 
 
-import unittest, os
+import unittest
 from src.write import simple_writer, list_writer, writers, text_writer
 from src.file_type import get_data_type
 
