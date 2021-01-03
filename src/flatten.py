@@ -7,6 +7,7 @@ This module shall handle flattening of the data
 
 
 from itertools import chain, starmap
+from src.file_type import DataType
 
 
 def flatten_dict(dictionary):
@@ -33,3 +34,6 @@ def flatten_dict(dictionary):
             break
 
     return dictionary
+
+
+flatteners = {DataType.JSON: flatten_dict}
