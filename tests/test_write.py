@@ -1,7 +1,7 @@
 """Module tests functionalty in write.py"""
 
 
-import unittest
+import unittest, os
 from src.write import simple_writer, list_writer
 
 
@@ -17,6 +17,10 @@ class TestWriteSimple(unittest.TestCase):
         with open(self.output_file_name, 'r') as f:
             data = f.readlines()
         self.assertEqual(data, self.expected_data)
+
+    def tearDown(self) -> None:
+        import os
+        os.remove(self.output_file_name)
 
 
 class TestWritelistOfDicts(unittest.TestCase):
@@ -41,9 +45,14 @@ class TestWritelistOfDicts(unittest.TestCase):
             'key5\tkey6\n',
             'value5\tvalue6\n'
         ]
-        output_file = "./tests/list_writer_output.txt"
-        list_writer(self.list_of_dicts, output_file)
-        with open(output_file, 'r') as f:
+        self.output_file = "./tests/list_writer_output.txt"
+        list_writer(self.list_of_dicts, self.output_file)
+        with open(self.output_file, 'r') as f:
             self.written_data = f.readlines()
+
     def test_write_list_of_dicts(self):
         self.assertEqual(self.written_data, self.expected_data)
+
+    def tearDown(self) -> None:
+        import os
+        os.remove(self.output_file)
