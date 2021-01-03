@@ -38,7 +38,7 @@ class TestWritelistOfDicts(unittest.TestCase):
                 'key5': 'value5', 'key6': 'value6'
             }
         ]
-        self.expected_data =[
+        self.expected_data = [
             'key1\tkey2\n',
             'value1\tvalue2\n',
             'key3\tkey4\n',
@@ -66,3 +66,8 @@ class TestWriters(unittest.TestCase):
         testing_file = "./tests/json_testing_sample.json"
         file_type = get_data_type(testing_file)
         self.assertEqual(writers[file_type], list_writer)
+
+    def test_writers_returns_text_writer_for_text(self):
+        testing_file = "./tests/ingest_testing_sample.txt"
+        file_type = get_data_type(testing_file)
+        self.assertEqual(writers[file_type], text_writer)
